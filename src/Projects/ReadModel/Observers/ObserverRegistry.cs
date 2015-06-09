@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Projects.Infrastructure;
-using Projects.ReadModel.Views;
 
 namespace Projects.ReadModel.Observers
 {
@@ -8,7 +7,8 @@ namespace Projects.ReadModel.Observers
     {
         public IEnumerable<object> GetObservers(IProjectionWriterFactory factory)
         {
-            yield return new SamplesObserver(factory.GetProjectionWriter<SampleView>());
+            //I'm sure this will be used. Leaving here for a reference.
+            yield return null; //new SamplesObserver(factory.GetProjectionWriter<SampleView>());
         }
     }
 }

@@ -5,11 +5,6 @@ namespace Projects
 {
     public interface IApplicationSettings
     {
-        string GesIpAddress { get; }
-        int GesHttpPort { get; }
-        int GesTcpIpPort { get; }
-        string GesUserName { get; }
-        string GesPassword { get; }
         string MongoDbConnectionString { get; }
         string MongoDbName { get; }
     }
@@ -18,20 +13,10 @@ namespace Projects
     {
         public ApplicationSettings()
         {
-            GesIpAddress = FromAppSetting("GesIpAddress");
-            GesHttpPort = TryGetIntAppSetting("GesHttpPort");
-            GesTcpIpPort = TryGetIntAppSetting("GesTcpIpPort");
-            GesUserName = FromAppSetting("GesUserName");
-            GesPassword = FromAppSetting("GesPassword");
             MongoDbConnectionString = FromAppSetting("MongoDbConnectionString");
             MongoDbName = FromAppSetting("MongoDbName");
         }
 
-        public string GesIpAddress { get; private set; }
-        public int GesHttpPort { get; private set; }
-        public int GesTcpIpPort { get; private set; }
-        public string GesUserName { get; private set; }
-        public string GesPassword { get; private set; }
         public string MongoDbConnectionString { get; private set; }
         public string MongoDbName { get; private set; }
 
