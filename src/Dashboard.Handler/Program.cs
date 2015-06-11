@@ -1,24 +1,20 @@
 ﻿using System;
 using NServiceBus;
 
-namespace Dashboard.Handler
+class Program
 {
-    public class Program
+    static void Main()
     {
+        var busConfiguration = new BusConfiguration();
+        busConfiguration.EndpointName("Dashboard.Dashboard.Handler");
+        busConfiguration.UseSerialization<XmlSerializer>();
+        busConfiguration.EnableInstallers();
+        busConfiguration.UsePersistence<InMemoryPersistence>();
 
-        static void Main()
+        using (IBus bus = Bus.Create(busConfiguration).Start())
         {
-            var busConfiguration = new BusConfiguration();
-            busConfiguration.EndpointName("Dashboard.Dashboard.Handler");
-            busConfiguration.UseSerialization<JsonSerializer>();
-            busConfiguration.EnableInstallers();
-            busConfiguration.UsePersistence<InMemoryPersistence>();
-
-            using (IBus bus = Bus.Create(busConfiguration).Start())
-            {
-                Console.WriteLine("To exit press 'Ctrl + C'");
-                Console.ReadLine();
-            }
+            Console.WriteLine("To exit press 'Ctrl + C'");
+            Console.ReadLine();
         }
     }
 }

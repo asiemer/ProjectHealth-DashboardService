@@ -1,11 +1,9 @@
 ﻿using System;
 using NServiceBus;
 
-namespace Dashboard.Handler
+public class OrderPlaced : IEvent
 {
-    public class OrderPlaced : IEvent
-    {
-        public Guid OrderId { get; set; }
-    }
+    public Guid OrderId { get; set; }
 }
+
 
