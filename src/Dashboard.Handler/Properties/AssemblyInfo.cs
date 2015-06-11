@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DashboardHandler")]
+[assembly: AssemblyTitle("Dashboard.Handler")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DashboardHandler")]
+[assembly: AssemblyProduct("Dashboard.Handler")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("93e209d8-2ad3-4642-9034-0952e8a3db9b")]
+[assembly: Guid("8d55ec7c-09c7-4c2f-a0ac-6cef350d5b4c")]
 
 // Version information for an assembly consists of the following four values:
 //
