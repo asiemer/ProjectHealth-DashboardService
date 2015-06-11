@@ -1,11 +1,11 @@
 properties{
-	$projectName = "Iteration0"
+	$projectName = "Dashboard"
     $config = if($useConfig){$useConfig} else {"Debug"};
 	$baseDir = Resolve-Path .\
 	$srcDir = "$baseDir\src"
     $buildDir = "$baseDir\build\"
 	$packagesDir = "$buildDir\$config\"
-	$slnFile = "$baseDir\src\Projects.sln"
+	$slnFile = "$baseDir\src\Dashboard.sln"
 	
 	$testDir = "$buildDir\test"
 	$testCopyIgnorePath = "_ReSharper"

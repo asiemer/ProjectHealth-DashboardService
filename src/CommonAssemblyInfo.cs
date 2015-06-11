@@ -15,7 +15,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersionAttribute("0.0.0.999")]
 [assembly: AssemblyFileVersionAttribute("0.0.0.999")]
 [assembly: AssemblyCopyrightAttribute("Copyright 2013-2015")]
-[assembly: AssemblyProductAttribute("Iteration0")]
+[assembly: AssemblyProductAttribute("Dashboard")]
 [assembly: AssemblyCompanyAttribute("ClearMeasure")]
 [assembly: AssemblyConfigurationAttribute("release")]
 [assembly: AssemblyInformationalVersionAttribute("0.0.0.999")]
