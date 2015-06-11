@@ -15,11 +15,5 @@ public class PlaceOrderHandler : IHandleMessages<PlaceOrder>
         Console.WriteLine(@"Order for Product:{0} placed with id: {1}", message.Product, message.Id);
 
         Console.WriteLine(@"Publishing: OrderPlaced for Order Id: {0}", message.Id);
-
-        var orderPlaced = new OrderPlaced
-        {
-            OrderId = message.Id
-        };
-        bus.Publish(orderPlaced);
     }
 }
