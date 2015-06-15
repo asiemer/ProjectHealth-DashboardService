@@ -50,10 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigErrorQueue.cs" />
-    <Compile Include="OrderCreatedHandler.cs" />
     <Compile Include="OrderPlaced.cs" />
-    <Compile Include="PlaceOrder.cs" />
-    <Compile Include="PlaceOrderHandler.cs" />
+    <Compile Include="OrderPlacedHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
