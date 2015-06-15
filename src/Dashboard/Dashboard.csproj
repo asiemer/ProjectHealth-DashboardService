@@ -110,7 +110,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\CommonAssemblyInfo.cs">
@@ -120,12 +122,14 @@
     <Compile Include="App_Start\Bootstrap.cs" />
     <Compile Include="Aspects\StatsdMetricsAttribute.cs" />
     <Compile Include="Controllers\AopController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Domain\Base\AggregateBase.cs" />
     <Compile Include="Domain\Base\IAggregate.cs" />
     <Compile Include="Domain\Base\IAggregateFactory.cs" />
     <Compile Include="Domain\Base\IRepository.cs" />
     <Compile Include="Domain\Base\RedirectToWhen.cs" />
     <Compile Include="Domain\Base\IState.cs" />
+    <Compile Include="Domain\Dashboard\DashboardApplicationService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
