@@ -23,7 +23,7 @@ namespace Projects
                 init.For<IRepository>().Use(c => _repository);
                 init.For<IApplicationSettings>().Use<ApplicationSettings>();
                 init.For<IUniqueKeyGenerator>().Use<UniqueKeyGenerator>();
-                init.For<ILog>().Singleton().Use(c => LogManager.GetLogger("Projects"));
+                init.For<ILog>().Singleton().Use(c => LogManager.GetLogger("Dashboard"));
             });
             GlobalConfiguration.Configuration.DependencyResolver =
                 new StructureMapResolver(ObjectFactory.Container);
