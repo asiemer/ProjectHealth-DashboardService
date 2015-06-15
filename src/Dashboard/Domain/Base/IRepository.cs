@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Projects.Domain
+namespace Dashboard.Domain
 {
     public interface IRepository
     {

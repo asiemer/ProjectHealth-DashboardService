@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 
-namespace Projects.Domain
+namespace Dashboard.Domain
 {
     public static class RedirectToWhen
     {

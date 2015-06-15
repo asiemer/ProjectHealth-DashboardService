@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 
-namespace Projects
+namespace Dashboard
 {
     public class WebApiConfig
     {

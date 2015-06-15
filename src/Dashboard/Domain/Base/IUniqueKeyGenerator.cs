@@ -1,4 +1,4 @@
-﻿namespace Projects.Domain
+﻿namespace Dashboard.Domain
 {
     public interface IUniqueKeyGenerator
     {

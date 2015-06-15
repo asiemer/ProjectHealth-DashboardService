@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Projects.Infrastructure;
+using Dashboard.Infrastructure;
 
-namespace Projects.ReadModel.Observers
+namespace Dashboard.ReadModel.Observers
 {
     public class ObserverRegistry
     {

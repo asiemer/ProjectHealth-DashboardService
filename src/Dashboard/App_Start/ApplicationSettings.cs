@@ -1,7 +1,7 @@
 using System;
 using System.Configuration;
 
-namespace Projects
+namespace Dashboard
 {
     public interface IApplicationSettings
     {

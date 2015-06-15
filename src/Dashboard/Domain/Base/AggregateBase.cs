@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Projects.Domain
+namespace Dashboard.Domain
 {
     public abstract class AggregateBase<TState> : IAggregate
         where TState : IState

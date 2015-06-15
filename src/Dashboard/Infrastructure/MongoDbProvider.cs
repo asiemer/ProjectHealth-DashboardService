@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using MongoDB.Driver;
 
-namespace Projects.Infrastructure
+namespace Dashboard.Infrastructure
 {
     public abstract class MongoDbProvider<T> : IProvider<T>
     {

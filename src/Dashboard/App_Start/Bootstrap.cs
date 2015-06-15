@@ -1,15 +1,15 @@
 ﻿using System;
 using System.IO;
 using System.Web.Http;
+using Dashboard.Domain;
+using Dashboard.Infrastructure;
 using log4net;
 using log4net.Config;
-using Projects.Domain;
-using Projects.Infrastructure;
 using StatsdClient;
 using StructureMap;
 using WebApiContrib.IoC.StructureMap;
 
-namespace Projects
+namespace Dashboard
 {
     public static class Bootstrap
     {

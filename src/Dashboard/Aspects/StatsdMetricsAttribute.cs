@@ -2,7 +2,7 @@
 using PostSharp.Aspects;
 using StatsdClient;
 
-namespace Projects.Aspects
+namespace Dashboard.Aspects
 {
     [Serializable]
     public class StatsdMetricsAttribute : OnMethodBoundaryAspect

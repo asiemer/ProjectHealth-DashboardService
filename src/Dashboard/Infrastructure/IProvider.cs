@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace Projects.Infrastructure
+namespace Dashboard.Infrastructure
 {
     public interface IProvider<T>
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Projects.Domain;
+using Dashboard.Domain;
 
-namespace Projects.Infrastructure
+namespace Dashboard.Infrastructure
 {
     public class UniqueKeyGenerator : IUniqueKeyGenerator
     {

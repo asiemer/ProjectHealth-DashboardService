@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using Projects.ReadModel;
+using Dashboard.ReadModel;
 
-namespace Projects.Infrastructure
+namespace Dashboard.Infrastructure
 {
     public class MongoDbProjectionWriter<T> : IProjectionWriter<T>
            where T : class

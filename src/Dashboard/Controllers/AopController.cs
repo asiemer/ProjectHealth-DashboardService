@@ -4,9 +4,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using Projects.Aspects;
+using Dashboard.Aspects;
 
-namespace Projects.Controllers
+namespace Dashboard.Controllers
 {
     [RoutePrefix("api/aop")]
     public class AopController : ApiController

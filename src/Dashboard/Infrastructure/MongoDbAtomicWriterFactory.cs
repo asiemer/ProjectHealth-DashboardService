@@ -1,4 +1,4 @@
-namespace Projects.Infrastructure
+namespace Dashboard.Infrastructure
 {
     public class MongoDbAtomicWriterFactory : IProjectionWriterFactory
     {

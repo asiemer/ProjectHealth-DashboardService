@@ -2,7 +2,7 @@
 using System.Web;
 using System.Web.Http;
 
-namespace Projects
+namespace Dashboard
 {
     public class Global : HttpApplication
     {
