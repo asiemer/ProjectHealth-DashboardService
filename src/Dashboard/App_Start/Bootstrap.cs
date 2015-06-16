@@ -2,7 +2,10 @@
 using System.IO;
 using System.Web.Http;
 using Dashboard.Domain;
+using Dashboard.Domain.Dashboard;
 using Dashboard.Infrastructure;
+using Dashboard.ReadModel.Providers;
+using Dashboard.ReadModel.Views;
 using log4net;
 using log4net.Config;
 using StatsdClient;

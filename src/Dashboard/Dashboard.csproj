@@ -121,6 +121,8 @@
     <Compile Include="App_Start\ApplicationSettings.cs" />
     <Compile Include="App_Start\Bootstrap.cs" />
     <Compile Include="Aspects\StatsdMetricsAttribute.cs" />
+    <Compile Include="Contracts\Commands\DashboardCommands.cs" />
+    <Compile Include="Contracts\Events\DashboardEvents.cs" />
     <Compile Include="Controllers\AopController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Domain\Base\AggregateBase.cs" />
@@ -143,13 +145,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Infrastructure\IProjectionWriter.cs" />
     <Compile Include="Infrastructure\MongoDbProvider.cs" />
+    <Compile Include="ReadModel\Providers\DashboardProvider.cs" />
+    <Compile Include="ReadModel\Views\DashboardView.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Contracts\Commands\" />
-    <Folder Include="Contracts\Events\" />
-    <Folder Include="ReadModel\Providers\" />
-    <Folder Include="ReadModel\Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -165,7 +164,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>30315</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:3030/</IISUrl>
+          <IISUrl>http://localhost:3031/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
