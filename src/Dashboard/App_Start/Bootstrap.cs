@@ -4,6 +4,7 @@ using System.Web.Http;
 using Dashboard.Domain;
 using Dashboard.Infrastructure;
 using Dashboard.ReadModel.Providers;
+using Dashboard.ReadModel.Views;
 using log4net;
 using log4net.Config;
 using NServiceBus;
@@ -16,6 +17,7 @@ namespace Dashboard
     public static class Bootstrap
     {
         private static IRepository _repository;
+        private static IApplicationSettings _applicationSettings = new ApplicationSettings();
 
         public static void Init()
         {
@@ -24,9 +26,10 @@ namespace Dashboard
             ObjectFactory.Initialize(init =>
             {
                 init.For<IRepository>().Use(c => _repository);
-                init.For<IApplicationSettings>().Use<ApplicationSettings>();
+                init.For<IApplicationSettings>().Use(() => _applicationSettings);
                 init.For<IUniqueKeyGenerator>().Use<UniqueKeyGenerator>();
                 init.For<IDashboardProvider>().Use<RAGWidgetViewProvider>();
+                init.For<IProjectionWriter<RAGWidgetView>>().Use<MongoDbProjectionWriter<RAGWidgetView>>().Ctor<string>("connectionString").Is(_applicationSettings.MongoDbConnectionString).Ctor<string>("databaseName").Is(_applicationSettings.MongoDbName);
                 init.For<ILog>().Singleton().Use(c => LogManager.GetLogger("Dashboard"));
             });
             GlobalConfiguration.Configuration.DependencyResolver =
