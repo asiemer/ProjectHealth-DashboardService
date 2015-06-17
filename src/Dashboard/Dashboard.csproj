@@ -145,7 +145,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Infrastructure\IProjectionWriter.cs" />
     <Compile Include="Infrastructure\MongoDbProvider.cs" />
-    <Compile Include="ReadModel\Providers\DashboardProvider.cs" />
+    <Compile Include="ReadModel\Providers\RAGWidgetViewProvider.cs" />
     <Compile Include="ReadModel\Views\DashboardView.cs" />
   </ItemGroup>
   <ItemGroup />

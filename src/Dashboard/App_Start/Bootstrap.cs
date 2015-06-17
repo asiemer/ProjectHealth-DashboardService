@@ -2,10 +2,8 @@
 using System.IO;
 using System.Web.Http;
 using Dashboard.Domain;
-using Dashboard.Domain.Dashboard;
 using Dashboard.Infrastructure;
 using Dashboard.ReadModel.Providers;
-using Dashboard.ReadModel.Views;
 using log4net;
 using log4net.Config;
 using StatsdClient;
@@ -26,6 +24,7 @@ namespace Dashboard
                 init.For<IRepository>().Use(c => _repository);
                 init.For<IApplicationSettings>().Use<ApplicationSettings>();
                 init.For<IUniqueKeyGenerator>().Use<UniqueKeyGenerator>();
+                init.For<IDashboardProvider>().Use<RAGWidgetViewProvider>();
                 init.For<ILog>().Singleton().Use(c => LogManager.GetLogger("Dashboard"));
             });
             GlobalConfiguration.Configuration.DependencyResolver =

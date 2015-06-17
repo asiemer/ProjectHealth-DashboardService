@@ -1,65 +1,56 @@
 ﻿using System;
-using System.Net;
-using System.Net.Http;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Web.Http;
-using Dashboard.Infrastructure;
+using Dashboard.ReadModel.Providers;
 using Dashboard.ReadModel.Views;
-using Newtonsoft.Json.Linq;
 
 namespace Dashboard.Controllers
 {
     [RoutePrefix("api/dashboard")]
     public class DashboardController : ApiController
     {
-        //private readonly IDashboardApplicationService _dashboardApplicationService;
-        private readonly IApplicationSettings _applicationSettings;
+        private readonly IDashboardProvider _dashboardProvider;
 
-        public DashboardController(IApplicationSettings applicationSettings)
+        public DashboardController(IDashboardProvider dashboardProvider)
         {
-            //_dashboardApplicationService = dashboardApplicationService;
-            _applicationSettings = applicationSettings;
+            _dashboardProvider = dashboardProvider;
         }
 
         [HttpGet]
-        [Route("getRAGWidget")]
-        public JToken GetRAGWidgetInformation()
+        [Route("getRAGWidget/{RAGWidgetId}")]
+        public async Task<RAGWidgetInfo> GetRAGWidgetInformation(Guid ragWidgetId)
         {
-            var jsonToParse = CreateRAGJsonString();
-            JToken json = JObject.Parse(jsonToParse);
-            return json;
+            var ragWidgetFromDB = await _dashboardProvider.Get(ragWidgetId);
+            return ragWidgetFromDB.ToRagWidgetInfo();
         }
+    }
 
-        private string CreateRAGJsonString()
+    public static class ExtendsRAGWidgetInfo
+    {
+        public static RAGWidgetInfo ToRagWidgetInfo(this RAGWidgetView x)
         {
-            var jsonToParse = "";
-            var beginningJson = "{'item': [";
-            var ragModel = new RAGColumnModel
+            return new RAGWidgetInfo
             {
-                RedValue = 10,
-                AmberValue = 15,
-                GreenValue = 20,
+                item = new List<TextValue>
+                {
+                    new TextValue {text = "Red", value = x.RedValue},
+                    new TextValue {text = "Yellow", value = x.AmberValue},
+                    new TextValue {text = "Green", value = x.GreenValue},
+                }
             };
-            var first = "{'value':" + ragModel.RedValue + ",'text':'" + ragModel.RedString + "'},";
-            var second = jsonToParse + "{'value':" + ragModel.AmberValue + ",'text':'" + ragModel.AmberString + "'},";
-            var third = jsonToParse + "{'value':" + ragModel.GreenValue + ",'text':'" + ragModel.GreenString + "'},";
-            var end = "]}";
-            var totalJson = beginningJson + first + second + third + end;
-            return totalJson;
         }
+    }
 
-        //CreateRAGWidgetInformation will be temporary until we have information to set from events
-        //From the ProjectsService
-        [HttpPost]
-        [Route("create")]
-        public HttpResponseMessage CreateRAGWidgetInformation(CreateRAGWidgetRequest req)
-        {
-            //This is just here temporary until we figure out how we want to handle incoming events.
-            var writer = new MongoDbProjectionWriter<DashboardView>(_applicationSettings.MongoDbConnectionString, _applicationSettings.MongoDbName);
-            var id = Guid.NewGuid();
-            var dashboardView = new DashboardView {Id = id, Name = req.Name};
-            writer.Add(id, dashboardView);
-            return Request.CreateResponse(HttpStatusCode.Created, "RAG Information Created in Dashboard DB");
-        }
+    public class RAGWidgetInfo
+    {
+        public List<TextValue> item { get; set; }
+    }
+
+    public class TextValue
+    {
+        public string text { get; set; }
+        public int value { get; set; }
     }
 
     public class CreateRAGWidgetRequest

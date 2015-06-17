@@ -31,7 +31,7 @@ namespace Dashboard.Infrastructure
             var existingItem = await collection.Find(filter).FirstOrDefaultAsync();
 
             if (existingItem == null)
-                throw new InvalidOperationException("Item does not exists");
+                throw new InvalidOperationException("item does not exists");
 
             update(existingItem);
             await collection.ReplaceOneAsync(filter, existingItem);
