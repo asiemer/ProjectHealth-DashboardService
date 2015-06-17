@@ -1,0 +1,818 @@
+﻿2015-06-17 11:13:43.305 INFO  DefaultFactory Logging to 'C:\dev\ProjectHeartbeat\ProjectHeartbeat-DashboardService\src\Dashboard\App_Data\' with level Info
+2015-06-17 11:13:43.370 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Sagas' storage.
+2015-06-17 11:13:43.371 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Timeouts' storage.
+2015-06-17 11:13:43.372 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Subscriptions' storage.
+2015-06-17 11:13:43.373 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Outbox' storage.
+2015-06-17 11:13:43.373 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+GatewayDeduplication' storage.
+2015-06-17 11:15:07.865 INFO  DefaultFactory Logging to 'C:\dev\ProjectHeartbeat\ProjectHeartbeat-DashboardService\src\Dashboard\App_Data\' with level Info
+2015-06-17 11:15:07.931 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Sagas' storage.
+2015-06-17 11:15:07.932 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Timeouts' storage.
+2015-06-17 11:15:07.932 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Subscriptions' storage.
+2015-06-17 11:15:07.933 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Outbox' storage.
+2015-06-17 11:15:07.933 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+GatewayDeduplication' storage.
+2015-06-17 11:15:08.049 INFO  NServiceBus.Licensing.LicenseManager Trial for Particular Service Platform is still active, trial expires on 6/23/2015.
+2015-06-17 11:15:08.076 INFO  NServiceBus.Features.UnicastBus Number of messages found: 2
+2015-06-17 11:15:08.109 WARN  NServiceBus.Transports.Msmq.MsmqQueueCreator Queue CM-LT-25\private$\Dashboard.Dashboard does not exist.
+2015-06-17 11:15:08.591 WARN  NServiceBus.Transports.Msmq.MsmqQueueCreator Queue CM-LT-25\private$\Dashboard.Dashboard.Timeouts does not exist.
+2015-06-17 11:15:08.783 WARN  NServiceBus.Transports.Msmq.MsmqQueueCreator Queue CM-LT-25\private$\Dashboard.Dashboard.TimeoutsDispatcher does not exist.
+2015-06-17 11:15:09.067 WARN  NServiceBus.Transports.Msmq.MsmqQueueCreator Queue CM-LT-25\private$\Dashboard.Dashboard.Retries does not exist.
+2015-06-17 11:15:09.368 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'CM-LT-25\TPI Admin' to group 'Performance Monitor Users' since process is not running with elevate privileges. Processing will continue. To manually perform this action run the following command from an admin console:
+net localgroup "Performance Monitor Users" "CM-LT-25\TPI Admin" /add
+2015-06-17 11:15:09.379 INFO  NServiceBus.Features.DisplayDiagnosticsForFeatures ------------- FEATURES ----------------
+Name: CriticalErrorHandling
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: CustomIDataBus
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [DataBus]
+
+Name: DataBus
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -No databus properties was found in available messages
+
+Name: Encryptor
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -No encryption properties was found in available messages
+
+Name: ErrorSubscribers
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: ForwarderFaultManager
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: InMemoryFaultManager
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: InstallationSupport
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: CriticalTimeMonitoring
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: Audit
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -No configured audit queue was found
+
+Name: AutoSubscribe
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: ApplySubscriptions
+
+Name: MsmqSubscriptionPersistence
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: Scheduler
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: CustomSerialization
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -CustomSerialization not enable since serialization definition not detected.
+
+Name: ForwardReceivedMessages
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -No forwarding address was defined in the unicastbus config
+
+Name: RegisterHandlersInOrder
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: SLAMonitoring
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: LicenseReminder
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: Outbox
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: InMemoryGatewayPersistence
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [Gateway]
+
+Name: InMemoryOutboxPersistence
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [Outbox]
+
+Name: InMemorySagaPersistence
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [Sagas]
+
+Name: InMemorySubscriptionPersistence
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: [MessageDrivenSubscriptions]
+Startup Tasks: None
+
+Name: InMemoryTimeoutPersistence
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: [TimeoutManager]
+Startup Tasks: None
+
+Name: TimeoutManagerBasedDeferral
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: UnicastBus
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: BinarySerialization
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -BinarySerialization not enable since serialization definition not detected.
+
+Name: BsonSerialization
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -BsonSerialization not enable since serialization definition not detected.
+
+Name: JsonSerialization
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -JsonSerialization not enable since serialization definition not detected.
+
+Name: XmlSerialization
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: MsmqTransportConfigurator
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: TimeoutManager
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: [TimeoutManagerBasedDeferral]
+Startup Tasks: None
+
+Name: Sagas
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -No sagas was found in scanned types
+
+Name: SecondLevelRetries
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: [ForwarderFaultManager]
+Startup Tasks: None
+
+Name: DataBusFileBased
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [DataBus]
+
+Name: StorageDrivenPublishing
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: MessageDrivenSubscriptions
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+
+2015-06-17 11:15:09.403 INFO  NServiceBus.PerformanceCounterHelper NServiceBus performance counter for '# of msgs successfully processed / sec' is not set up correctly. To rectify this problem see http://docs.particular.net/search?q=PerformanceCounters.
+2015-06-17 11:15:09.493 INFO  NServiceBus.PerformanceCounterHelper NServiceBus performance counter for '# of msgs successfully processed / sec' is not set up correctly. To rectify this problem see http://docs.particular.net/search?q=PerformanceCounters.
+2015-06-17 11:15:09.493 INFO  NServiceBus.PerformanceCounterHelper NServiceBus performance counter for '# of msgs successfully processed / sec' is not set up correctly. To rectify this problem see http://docs.particular.net/search?q=PerformanceCounters.
+2015-06-17 11:15:09.522 INFO  NServiceBus.PerformanceCounterHelper NServiceBus performance counter for '# of msgs successfully processed / sec' is not set up correctly. To rectify this problem see http://docs.particular.net/search?q=PerformanceCounters.
+2015-06-17 11:15:09.552 INFO  NServiceBus.Satellites.SatelliteLauncher Started 2/3 NServiceBus.Timeout.Hosting.Windows.TimeoutDispatcherProcessor, NServiceBus.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
+2015-06-17 11:15:09.558 INFO  NServiceBus.Satellites.SatelliteLauncher Started 3/3 NServiceBus.SecondLevelRetries.SecondLevelRetriesProcessor, NServiceBus.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
+2015-06-17 11:15:09.570 INFO  NServiceBus.Satellites.SatelliteLauncher Started 1/3 NServiceBus.Timeout.Hosting.Windows.TimeoutMessageProcessor, NServiceBus.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
+2015-06-17 11:32:37.683 INFO  DefaultFactory Logging to 'C:\dev\ProjectHeartbeat\ProjectHeartbeat-DashboardService\src\Dashboard\App_Data\' with level Info
+2015-06-17 11:32:37.745 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Sagas' storage.
+2015-06-17 11:32:37.746 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Timeouts' storage.
+2015-06-17 11:32:37.748 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Subscriptions' storage.
+2015-06-17 11:32:37.748 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Outbox' storage.
+2015-06-17 11:32:37.749 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+GatewayDeduplication' storage.
+2015-06-17 11:32:37.862 INFO  NServiceBus.Licensing.LicenseManager Trial for Particular Service Platform is still active, trial expires on 6/23/2015.
+2015-06-17 11:32:37.891 INFO  NServiceBus.Features.UnicastBus Number of messages found: 2
+2015-06-17 11:32:39.200 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'CM-LT-25\TPI Admin' to group 'Performance Monitor Users' since process is not running with elevate privileges. Processing will continue. To manually perform this action run the following command from an admin console:
+net localgroup "Performance Monitor Users" "CM-LT-25\TPI Admin" /add
+2015-06-17 11:32:39.217 INFO  NServiceBus.Features.DisplayDiagnosticsForFeatures ------------- FEATURES ----------------
+Name: CriticalErrorHandling
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: CustomIDataBus
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [DataBus]
+
+Name: DataBus
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -No databus properties was found in available messages
+
+Name: Encryptor
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -No encryption properties was found in available messages
+
+Name: ErrorSubscribers
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: ForwarderFaultManager
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: InMemoryFaultManager
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: InstallationSupport
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: CriticalTimeMonitoring
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: Audit
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -No configured audit queue was found
+
+Name: AutoSubscribe
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: ApplySubscriptions
+
+Name: MsmqSubscriptionPersistence
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: Scheduler
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: CustomSerialization
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -CustomSerialization not enable since serialization definition not detected.
+
+Name: ForwardReceivedMessages
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -No forwarding address was defined in the unicastbus config
+
+Name: RegisterHandlersInOrder
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: SLAMonitoring
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: LicenseReminder
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: Outbox
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: InMemoryGatewayPersistence
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [Gateway]
+
+Name: InMemoryOutboxPersistence
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [Outbox]
+
+Name: InMemorySagaPersistence
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [Sagas]
+
+Name: InMemorySubscriptionPersistence
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: [MessageDrivenSubscriptions]
+Startup Tasks: None
+
+Name: InMemoryTimeoutPersistence
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: [TimeoutManager]
+Startup Tasks: None
+
+Name: TimeoutManagerBasedDeferral
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: UnicastBus
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: BinarySerialization
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -BinarySerialization not enable since serialization definition not detected.
+
+Name: BsonSerialization
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -BsonSerialization not enable since serialization definition not detected.
+
+Name: JsonSerialization
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -JsonSerialization not enable since serialization definition not detected.
+
+Name: XmlSerialization
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: MsmqTransportConfigurator
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: TimeoutManager
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: [TimeoutManagerBasedDeferral]
+Startup Tasks: None
+
+Name: Sagas
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -No sagas was found in scanned types
+
+Name: SecondLevelRetries
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: [ForwarderFaultManager]
+Startup Tasks: None
+
+Name: DataBusFileBased
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [DataBus]
+
+Name: StorageDrivenPublishing
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: MessageDrivenSubscriptions
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+
+2015-06-17 11:32:39.239 INFO  NServiceBus.PerformanceCounterHelper NServiceBus performance counter for '# of msgs successfully processed / sec' is not set up correctly. To rectify this problem see http://docs.particular.net/search?q=PerformanceCounters.
+2015-06-17 11:32:39.366 INFO  NServiceBus.PerformanceCounterHelper NServiceBus performance counter for '# of msgs successfully processed / sec' is not set up correctly. To rectify this problem see http://docs.particular.net/search?q=PerformanceCounters.
+2015-06-17 11:32:39.366 INFO  NServiceBus.PerformanceCounterHelper NServiceBus performance counter for '# of msgs successfully processed / sec' is not set up correctly. To rectify this problem see http://docs.particular.net/search?q=PerformanceCounters.
+2015-06-17 11:32:39.404 INFO  NServiceBus.Satellites.SatelliteLauncher Started 3/3 NServiceBus.SecondLevelRetries.SecondLevelRetriesProcessor, NServiceBus.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
+2015-06-17 11:32:39.426 INFO  NServiceBus.PerformanceCounterHelper NServiceBus performance counter for '# of msgs successfully processed / sec' is not set up correctly. To rectify this problem see http://docs.particular.net/search?q=PerformanceCounters.
+2015-06-17 11:32:39.450 INFO  NServiceBus.Satellites.SatelliteLauncher Started 1/3 NServiceBus.Timeout.Hosting.Windows.TimeoutMessageProcessor, NServiceBus.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
+2015-06-17 11:32:39.450 INFO  NServiceBus.Satellites.SatelliteLauncher Started 2/3 NServiceBus.Timeout.Hosting.Windows.TimeoutDispatcherProcessor, NServiceBus.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
+2015-06-17 11:32:42.065 WARN  NServiceBus.DeserializeLogicalMessagesBehavior Could not determine message type from message header 'UpdateProjectScore, Coordinator, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. MessageId: 71766cb9-e723-4479-9106-a4ba00bd981f
+2015-06-17 11:57:08.845 INFO  DefaultFactory Logging to 'C:\dev\ProjectHeartbeat\ProjectHeartbeat-DashboardService\src\Dashboard\App_Data\' with level Info
+2015-06-17 11:57:08.911 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Sagas' storage.
+2015-06-17 11:57:08.912 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Timeouts' storage.
+2015-06-17 11:57:08.912 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Subscriptions' storage.
+2015-06-17 11:57:08.913 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Outbox' storage.
+2015-06-17 11:57:08.913 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'InMemoryPersistence' to provide storage for 'NServiceBus.Persistence.StorageType+GatewayDeduplication' storage.
+2015-06-17 11:57:09.034 INFO  NServiceBus.Licensing.LicenseManager Trial for Particular Service Platform is still active, trial expires on 6/23/2015.
+2015-06-17 11:57:09.061 INFO  NServiceBus.Features.UnicastBus Number of messages found: 2
+2015-06-17 11:57:10.547 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'CM-LT-25\TPI Admin' to group 'Performance Monitor Users' since process is not running with elevate privileges. Processing will continue. To manually perform this action run the following command from an admin console:
+net localgroup "Performance Monitor Users" "CM-LT-25\TPI Admin" /add
+2015-06-17 11:57:10.558 INFO  NServiceBus.Features.DisplayDiagnosticsForFeatures ------------- FEATURES ----------------
+Name: CriticalErrorHandling
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: CustomIDataBus
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [DataBus]
+
+Name: DataBus
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -No databus properties was found in available messages
+
+Name: Encryptor
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -No encryption properties was found in available messages
+
+Name: ErrorSubscribers
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: ForwarderFaultManager
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: InMemoryFaultManager
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: InstallationSupport
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: CriticalTimeMonitoring
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: Audit
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: AutoSubscribe
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: ApplySubscriptions
+
+Name: MsmqSubscriptionPersistence
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: Scheduler
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: CustomSerialization
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -CustomSerialization not enable since serialization definition not detected.
+
+Name: ForwardReceivedMessages
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -No forwarding address was defined in the unicastbus config
+
+Name: RegisterHandlersInOrder
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: SLAMonitoring
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: LicenseReminder
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: Outbox
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: InMemoryGatewayPersistence
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [Gateway]
+
+Name: InMemoryOutboxPersistence
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [Outbox]
+
+Name: InMemorySagaPersistence
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [Sagas]
+
+Name: InMemorySubscriptionPersistence
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: [MessageDrivenSubscriptions]
+Startup Tasks: None
+
+Name: InMemoryTimeoutPersistence
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: [TimeoutManager]
+Startup Tasks: None
+
+Name: TimeoutManagerBasedDeferral
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: UnicastBus
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: BinarySerialization
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -BinarySerialization not enable since serialization definition not detected.
+
+Name: BsonSerialization
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -BsonSerialization not enable since serialization definition not detected.
+
+Name: JsonSerialization
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -JsonSerialization not enable since serialization definition not detected.
+
+Name: XmlSerialization
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: MsmqTransportConfigurator
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: TimeoutManager
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: [TimeoutManagerBasedDeferral]
+Startup Tasks: None
+
+Name: Sagas
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -No sagas was found in scanned types
+
+Name: SecondLevelRetries
+Version: 5.2.2
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: [ForwarderFaultManager]
+Startup Tasks: None
+
+Name: DataBusFileBased
+Version: 5.2.2
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [DataBus]
+
+Name: StorageDrivenPublishing
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: MessageDrivenSubscriptions
+Version: 5.2.2
+Enabled by Default: No
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+
+2015-06-17 11:57:10.581 INFO  NServiceBus.PerformanceCounterHelper NServiceBus performance counter for '# of msgs successfully processed / sec' is not set up correctly. To rectify this problem see http://docs.particular.net/search?q=PerformanceCounters.
+2015-06-17 11:57:10.660 INFO  NServiceBus.PerformanceCounterHelper NServiceBus performance counter for '# of msgs successfully processed / sec' is not set up correctly. To rectify this problem see http://docs.particular.net/search?q=PerformanceCounters.
+2015-06-17 11:57:10.660 INFO  NServiceBus.PerformanceCounterHelper NServiceBus performance counter for '# of msgs successfully processed / sec' is not set up correctly. To rectify this problem see http://docs.particular.net/search?q=PerformanceCounters.
+2015-06-17 11:57:10.703 INFO  NServiceBus.PerformanceCounterHelper NServiceBus performance counter for '# of msgs successfully processed / sec' is not set up correctly. To rectify this problem see http://docs.particular.net/search?q=PerformanceCounters.
+2015-06-17 11:57:10.726 INFO  NServiceBus.Satellites.SatelliteLauncher Started 2/3 NServiceBus.Timeout.Hosting.Windows.TimeoutDispatcherProcessor, NServiceBus.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
+2015-06-17 11:57:10.736 INFO  NServiceBus.Satellites.SatelliteLauncher Started 3/3 NServiceBus.SecondLevelRetries.SecondLevelRetriesProcessor, NServiceBus.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
+2015-06-17 11:57:10.737 INFO  NServiceBus.Satellites.SatelliteLauncher Started 1/3 NServiceBus.Timeout.Hosting.Windows.TimeoutMessageProcessor, NServiceBus.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
+2015-06-17 11:57:14.102 WARN  NServiceBus.DeserializeLogicalMessagesBehavior Could not determine message type from message header 'UpdateProjectScore, Coordinator, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. MessageId: 74be170c-fcf1-4cd7-a90a-a4ba00c140d2
+2015-06-17 11:57:46.211 WARN  NServiceBus.DeserializeLogicalMessagesBehavior Could not determine message type from message header 'UpdateProjectScore, Coordinator, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. MessageId: b9c977f5-e84e-4aa7-85ac-a4ba00c4a3dd
+2015-06-17 11:59:43.248 WARN  NServiceBus.DeserializeLogicalMessagesBehavior Could not determine message type from message header 'UpdateProjectScore, Coordinator, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. MessageId: 9f96b233-66c4-4b8d-8740-a4ba00c5ad5e

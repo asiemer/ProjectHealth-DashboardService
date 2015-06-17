@@ -58,6 +58,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="NServiceBus.Core">
+      <HintPath>..\packages\NServiceBus.5.2.2\lib\net45\NServiceBus.Core.dll</HintPath>
+    </Reference>
     <Reference Include="PostSharp">
       <HintPath>..\packages\PostSharp.4.1.13\lib\net35-client\PostSharp.dll</HintPath>
       <Private>True</Private>
@@ -120,6 +123,7 @@
     </Compile>
     <Compile Include="App_Start\ApplicationSettings.cs" />
     <Compile Include="App_Start\Bootstrap.cs" />
+    <Compile Include="App_Start\ConfigErrorQueue.cs" />
     <Compile Include="Aspects\StatsdMetricsAttribute.cs" />
     <Compile Include="Contracts\Commands\DashboardCommands.cs" />
     <Compile Include="Contracts\Events\DashboardEvents.cs" />
@@ -136,6 +140,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Domain\Base\IUniqueKeyGenerator.cs" />
+    <Compile Include="Handlers\UpdateProjectScoreHandler.cs" />
     <Compile Include="Infrastructure\IProjectionWriterFactory.cs" />
     <Compile Include="Infrastructure\IProvider.cs" />
     <Compile Include="Infrastructure\MongoDbAtomicWriterFactory.cs" />
@@ -191,4 +196,8 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <PropertyGroup>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProjectDir)$(OutputPath)NServiceBus.Host.exe</StartProgram>
+  </PropertyGroup>
 </Project>
