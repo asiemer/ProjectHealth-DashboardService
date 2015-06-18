@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Dashboard;
 using Dashboard.Infrastructure;
 using Dashboard.ReadModel.Providers;
 using Dashboard.ReadModel.Views;
@@ -10,19 +9,19 @@ using StructureMap;
 public class UpdateProjectScoreHandler : IHandleMessages<UpdateProjectScore>
 {
     private readonly IProjectionWriter<RAGWidgetView> _commandWriter;
-    private readonly IRAGWidgetViewProvider _mongoProvider;
+    private readonly IRAGWidgetViewProvider _ragWidgetViewProvider;
     IBus bus;
-
+        
     public UpdateProjectScoreHandler(IBus bus)
         : this(bus, ObjectFactory.GetInstance<IProjectionWriter<RAGWidgetView>>(), ObjectFactory.GetInstance<IRAGWidgetViewProvider>())
     {
         this.bus = bus;
     }
 
-    public UpdateProjectScoreHandler(IBus bus, IProjectionWriter<RAGWidgetView> commandWriter, IRAGWidgetViewProvider mongoProvider)
+    public UpdateProjectScoreHandler(IBus bus, IProjectionWriter<RAGWidgetView> commandWriter, IRAGWidgetViewProvider ragWidgetViewProvider)
     {
         _commandWriter = commandWriter;
-        _mongoProvider = mongoProvider;
+        _ragWidgetViewProvider = ragWidgetViewProvider;
     }
 
     public void Handle(UpdateProjectScore command)
@@ -32,9 +31,8 @@ public class UpdateProjectScoreHandler : IHandleMessages<UpdateProjectScore>
 
     private async void UpdateDatabase(UpdateProjectScore command)
     {
-        bool viewExists = CheckIfRAGWidgetExists(command.Id);
-
-        if (viewExists)
+        var exists = CheckIfRAGWidgetExists(command.Id);
+        if (exists)
         {
             await _commandWriter.Update(command.Id, x =>
             {
@@ -52,11 +50,12 @@ public class UpdateProjectScoreHandler : IHandleMessages<UpdateProjectScore>
                 Red = command.Red,
             });
         }
+
     }
 
     private bool CheckIfRAGWidgetExists(Guid id)
     {
-        Task<RAGWidgetView> dbItem = _mongoProvider.GetById(id);
+        Task<RAGWidgetView> dbItem =  _ragWidgetViewProvider.Get(id);
         return dbItem.Result != null;
     }
 }

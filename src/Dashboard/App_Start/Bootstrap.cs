@@ -30,7 +30,6 @@ namespace Dashboard
                 init.For<IUniqueKeyGenerator>().Use<UniqueKeyGenerator>();
                 init.For<IRAGWidgetViewProvider>().Use<RAGWidgetViewProvider>();
                 init.For<IProjectionWriter<RAGWidgetView>>().Use<MongoDbProjectionWriter<RAGWidgetView>>().Ctor<string>("connectionString").Is(_applicationSettings.MongoDbConnectionString).Ctor<string>("databaseName").Is(_applicationSettings.MongoDbName);
-                init.For<IRAGWidgetViewProvider>().Use<RAGWidgetViewProvider>().Ctor<IApplicationSettings>().Is(_applicationSettings);
                 init.For<ILog>().Singleton().Use(c => LogManager.GetLogger("Dashboard"));
             });
             GlobalConfiguration.Configuration.DependencyResolver =
