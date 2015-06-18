@@ -10,9 +10,9 @@ namespace Dashboard.ReadModel.Views
 
     public class RAGWidgetView
     {
-        public int RedValue { get; set; }
-        public int AmberValue { get; set; }
-        public int GreenValue { get; set; }
+        public int Red { get; set; }
+        public int Yellow { get; set; }
+        public int Green { get; set; }
         public Guid Id { get; set; }
     }
 }

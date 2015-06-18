@@ -27,12 +27,12 @@ public class UpdateProjectScoreHandler : IHandleMessages<UpdateProjectScore>
 
     private async void UpdateDatabase(UpdateProjectScore command)
     {
-        var id = new Guid("cf629fac-0cdb-4eeb-901c-b6e04ca0acc8");
+        var id = new Guid("8f0c2009-ebc6-40e5-9130-989ae03bfc98");
         await _commandWriter.Update(id, x =>
         {
-            x.GreenValue = command.Green;
-            x.AmberValue = command.Yellow;
-            x.RedValue = command.Red;
+            x.Green = command.Green;
+            x.Yellow = command.Yellow;
+            x.Red = command.Red;
         });
     }
 }
