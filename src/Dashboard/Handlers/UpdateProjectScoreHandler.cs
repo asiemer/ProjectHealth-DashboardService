@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Threading.Tasks;
+using Dashboard;
 using Dashboard.Infrastructure;
+using Dashboard.ReadModel.Providers;
 using Dashboard.ReadModel.Views;
 using NServiceBus;
 using StructureMap;
@@ -7,17 +10,19 @@ using StructureMap;
 public class UpdateProjectScoreHandler : IHandleMessages<UpdateProjectScore>
 {
     private readonly IProjectionWriter<RAGWidgetView> _commandWriter;
+    private readonly IRAGWidgetViewProvider _mongoProvider;
     IBus bus;
 
     public UpdateProjectScoreHandler(IBus bus)
-        : this(bus, ObjectFactory.GetInstance<IProjectionWriter<RAGWidgetView>>())
+        : this(bus, ObjectFactory.GetInstance<IProjectionWriter<RAGWidgetView>>(), ObjectFactory.GetInstance<IRAGWidgetViewProvider>())
     {
         this.bus = bus;
     }
 
-    public UpdateProjectScoreHandler(IBus bus, IProjectionWriter<RAGWidgetView> commandWriter)
+    public UpdateProjectScoreHandler(IBus bus, IProjectionWriter<RAGWidgetView> commandWriter, IRAGWidgetViewProvider mongoProvider)
     {
         _commandWriter = commandWriter;
+        _mongoProvider = mongoProvider;
     }
 
     public void Handle(UpdateProjectScore command)
@@ -27,13 +32,32 @@ public class UpdateProjectScoreHandler : IHandleMessages<UpdateProjectScore>
 
     private async void UpdateDatabase(UpdateProjectScore command)
     {
-        var id = new Guid("8f0c2009-ebc6-40e5-9130-989ae03bfc98");
-        await _commandWriter.Update(id, x =>
+        bool viewExists = CheckIfRAGWidgetExists(command.Id);
+
+        if (viewExists)
         {
-            x.Green = command.Green;
-            x.Yellow = command.Yellow;
-            x.Red = command.Red;
-        });
+            await _commandWriter.Update(command.Id, x =>
+            {
+                x.Green = command.Green;
+                x.Yellow = command.Yellow;
+                x.Red = command.Red;
+            });
+        }
+        else
+        {
+            await _commandWriter.Add(command.Id, new RAGWidgetView
+            {
+                Green = command.Green,
+                Yellow = command.Yellow,
+                Red = command.Red,
+            });
+        }
+    }
+
+    private bool CheckIfRAGWidgetExists(Guid id)
+    {
+        Task<RAGWidgetView> dbItem = _mongoProvider.GetById(id);
+        return dbItem.Result != null;
     }
 }
 
