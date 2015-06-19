@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Dashboard;
 using Dashboard.Infrastructure;
 using Dashboard.ReadModel.Providers;
 using Dashboard.ReadModel.Views;
@@ -26,37 +27,42 @@ public class UpdateProjectScoreHandler : IHandleMessages<UpdateProjectScore>
 
     public void Handle(UpdateProjectScore command)
     {
+        HandleAsync(command).Wait();
+    }
+
+    private async Task HandleAsync(UpdateProjectScore command)
+    {
         UpdateDatabase(command);
     }
 
     private async void UpdateDatabase(UpdateProjectScore command)
     {
-        var exists = CheckIfRAGWidgetExists(command.Id);
+        var dbitem = await CheckIfRAGWidgetExists(command.Id);
+        var exists = (dbitem != null);
+
+        var ragWidgetView = new RAGWidgetView
+        {
+            Green = command.Green,
+            Yellow = command.Yellow,
+            Red = command.Red,
+        };
+        
         if (exists)
         {
-            await _commandWriter.Update(command.Id, x =>
-            {
-                x.Green = command.Green;
-                x.Yellow = command.Yellow;
-                x.Red = command.Red;
-            });
+            new Test().UpdateRecord(command);
         }
         else
         {
-            await _commandWriter.Add(command.Id, new RAGWidgetView
-            {
-                Green = command.Green,
-                Yellow = command.Yellow,
-                Red = command.Red,
-            });
+            new Test().CreateRecord(command, ragWidgetView);
         }
-
     }
 
-    private bool CheckIfRAGWidgetExists(Guid id)
+
+
+    private async Task<RAGWidgetView> CheckIfRAGWidgetExists(Guid id)
     {
-        Task<RAGWidgetView> dbItem =  _ragWidgetViewProvider.Get(id);
-        return dbItem.Result != null;
+        RAGWidgetView dbItem =  await _ragWidgetViewProvider.GetById(id);
+        return dbItem;
     }
 }
 

@@ -156,6 +156,7 @@
     <Compile Include="Infrastructure\MongoDbProvider.cs" />
     <Compile Include="ReadModel\Providers\RAGWidgetViewProvider.cs" />
     <Compile Include="ReadModel\Views\DashboardView.cs" />
+    <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
