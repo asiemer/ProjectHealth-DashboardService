@@ -1,34 +1,19 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Dashboard;
-using Dashboard.ReadModel.Providers;
 using NServiceBus;
-using StructureMap;
 
 public class UpdateProjectScoreHandler : IHandleMessages<UpdateProjectScore>
 {
-    private readonly IRAGWidgetViewProvider _ragWidgetViewProvider;
-    IBus bus;
-        
-    public UpdateProjectScoreHandler(IBus bus)
-        : this(bus, ObjectFactory.GetInstance<IRAGWidgetViewProvider>())
-    {
-        this.bus = bus;
-    }
+    private readonly IMongoDbWriter _mongoDbWriter;
 
-    public UpdateProjectScoreHandler(IBus bus, IRAGWidgetViewProvider ragWidgetViewProvider)
-    {;
-        _ragWidgetViewProvider = ragWidgetViewProvider;
+    public UpdateProjectScoreHandler(IMongoDbWriter mongoDbWriter)
+    {
+        _mongoDbWriter = mongoDbWriter;
     }
 
     public void Handle(UpdateProjectScore command)
     {
-        HandleAsync(command).Wait();
-    }
-
-    private async Task HandleAsync(UpdateProjectScore command)
-    {
-        new MongoDbModifier(_ragWidgetViewProvider).UpdateDatabase(command);
+        _mongoDbWriter.AddOrUpdate(command).Wait();
     }
 }
 

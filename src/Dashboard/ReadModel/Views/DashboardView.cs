@@ -8,7 +8,7 @@ namespace Dashboard.ReadModel.Views
         public string Name { get; set; }
     }
 
-    public class RAGWidgetView
+    public class RagWidgetView
     {
         public int Red { get; set; }
         public int Yellow { get; set; }

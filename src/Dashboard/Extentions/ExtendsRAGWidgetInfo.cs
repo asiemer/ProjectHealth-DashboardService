@@ -6,7 +6,7 @@ namespace Dashboard.Extentions
 {
     public static class ExtendsRAGWidgetInfo
     {
-        public static RAGWidgetInfo ToRagWidgetInfo(this RAGWidgetView x)
+        public static RAGWidgetInfo ToRagWidgetInfo(this RagWidgetView x)
         {
             return new RAGWidgetInfo
             {

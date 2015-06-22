@@ -18,10 +18,9 @@ namespace Dashboard.Controllers
         }
 
         [HttpGet]
-        [Route("getRAGWidget/{RAGWidgetId}")]
+        [Route("ragWidgets/{ragWidgetId}")]
         public async Task<RAGWidgetInfo> GetRAGWidgetInformation(Guid ragWidgetId)
         {
-            
             var ragWidgetFromDb = await _ragWidgetViewProvider.Get(ragWidgetId);
             return ragWidgetFromDb.ToRagWidgetInfo();
         }
