@@ -50,7 +50,7 @@ namespace Dashboard
             busConfiguration.UseSerialization<XmlSerializer>();
             busConfiguration.EnableInstallers();
             busConfiguration.UsePersistence<InMemoryPersistence>();
-
+            busConfiguration.UseTransport<SqlServerTransport>();
             Bus.Create(busConfiguration).Start();
         }
 
