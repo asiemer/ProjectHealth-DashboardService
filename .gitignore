@@ -6,3 +6,4 @@ bin
 *.suo
 *.user
 *.DotSettings
+src/Dashboard/App_Data/nsb_log_*.txt
